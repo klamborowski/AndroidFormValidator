@@ -38,7 +38,7 @@ And validate your form with
     <dependency>
         <groupId>pl.klamborowski</groupId>
         <artifactId>validator</artifactId>
-        <version>0.1</version>
+        <version>0.1.1</version>
         <type>aar</type>
     </dependency>
     
@@ -48,5 +48,5 @@ And validate your form with
         jcenter()
     }
     dependencies {
-        compile 'pl.klamborowski:validator:0.1'
+        compile 'pl.klamborowski:validator:0.1.1'
     }
