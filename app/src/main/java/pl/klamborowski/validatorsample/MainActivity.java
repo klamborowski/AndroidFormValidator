@@ -1,9 +1,9 @@
 package pl.klamborowski.validatorsample;
 
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
-import android.widget.EditText;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -13,13 +13,13 @@ import pl.klamborowski.validator.Validator;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.input_name)
-    EditText inputName;
+    TextInputEditText inputName;
     @BindView(R.id.input_email)
-    EditText inputEmail;
+    TextInputEditText inputEmail;
     @BindView(R.id.input_phone)
-    EditText inputPhone;
+    TextInputEditText inputPhone;
     @BindView(R.id.validate_btn)
-    Button   validateBtn;
+    Button            validateBtn;
 
     private Validator validator;
 

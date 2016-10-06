@@ -47,6 +47,11 @@ public class Validator {
             if (editText.getParent() instanceof TextInputLayout) {
                 parent = (TextInputLayout) editText.getParent();
                 parent.setErrorEnabled(false);
+            } else if (editText.getParent().getParent() instanceof TextInputLayout) {
+                //From version 24.2 TextInputLayout wrap child views into FrameLayout child i.e.
+                // TextInputLayout -> FrameLayout -> TextInputEditText
+                parent = (TextInputLayout) editText.getParent().getParent();
+                parent.setErrorEnabled(false);
             }
             editText.setError(null);
         }
