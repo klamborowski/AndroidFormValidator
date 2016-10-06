@@ -10,8 +10,8 @@ ext {
 
     libraryDescription = 'Validation for forms in Android applications'
 
-    siteUrl = 'https://github.com/klamborowski'
-    gitUrl = 'https://github.com/klamborowski'
+    siteUrl = 'https://github.com/klamborowski/AndroidFormValidator'
+    gitUrl = 'https://github.com/klamborowski/AndroidFormValidator.git'
 
     libraryVersion = '0.1'
 
