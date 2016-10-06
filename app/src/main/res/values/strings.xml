@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ValidatorSample</string>
+    <string name="hint_email">Email</string>
+    <string name="validator_emptiness">The field can not be empty</string>
+    <string name="validator_email_error">The field should contain email address</string>
+    <string name="validator_phone_number_error">The filed should contain phone number.</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_phone">Phone</string>
+    <string name="validate">Validate</string>
+</resources>
