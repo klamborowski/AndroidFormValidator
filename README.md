@@ -36,8 +36,8 @@ And validate your form with
 **Maven**
 
     <dependency>
-        <groupId>cn.pedant.sweetalert</groupId>
-        <artifactId>library</artifactId>
+        <groupId>pl.klamborowski</groupId>
+        <artifactId>validator</artifactId>
         <version>0.1</version>
         <type>aar</type>
     </dependency>
