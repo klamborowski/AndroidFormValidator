@@ -7,17 +7,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Validator {
-    private Map<EditText, ValidatorFieldType[]> fieldsForValidation = new HashMap<>();
+    private Map<EditText, ValidatorFieldRule[]> fieldsForValidation = new HashMap<>();
 
     private Validator(Builder builder) {
         addInputsForValidation(builder.fieldsForValidation);
     }
 
-    public void addInputForValidation(EditText editText, ValidatorFieldType... fieldType) {
+    public void addInputForValidation(EditText editText, ValidatorFieldRule... fieldType) {
         this.fieldsForValidation.put(editText, fieldType);
     }
 
-    public void addInputsForValidation(Map<EditText, ValidatorFieldType[]> fieldsForValidation) {
+    public void addInputsForValidation(Map<EditText, ValidatorFieldRule[]> fieldsForValidation) {
         this.fieldsForValidation.putAll(fieldsForValidation);
     }
 
@@ -51,17 +51,17 @@ public class Validator {
             editText.setError(null);
         }
 
-        ValidatorFieldType[] validatorFieldTypes = fieldsForValidation.get(editText);
-        if (validatorFieldTypes == null) {
+        ValidatorFieldRule[] validatorFieldRules = fieldsForValidation.get(editText);
+        if (validatorFieldRules == null) {
             return true;
         }
-        for (ValidatorFieldType validatorFieldType : validatorFieldTypes) {
-            if (!validatorFieldType.getValidationPattern().matcher(editText.getText()).matches()) {
+        for (ValidatorFieldRule validatorFieldRule : validatorFieldRules) {
+            if (!validatorFieldRule.getValidationPattern().matcher(editText.getText()).matches()) {
                 if (showErrors) {
                     if (parent != null) {
-                        parent.setError(editText.getContext().getString(validatorFieldType.getErrorResId()));
+                        parent.setError(editText.getContext().getString(validatorFieldRule.getErrorResId()));
                     } else {
-                        editText.setError(editText.getContext().getString(validatorFieldType.getErrorResId()));
+                        editText.setError(editText.getContext().getString(validatorFieldRule.getErrorResId()));
                     }
                 }
                 return false;
@@ -72,13 +72,13 @@ public class Validator {
 
     public static final class Builder {
 
-        private Map<EditText, ValidatorFieldType[]> fieldsForValidation;
+        private Map<EditText, ValidatorFieldRule[]> fieldsForValidation;
 
         public Builder() {
             fieldsForValidation = new HashMap<>();
         }
 
-        public Builder addField(EditText editText, ValidatorFieldType... fieldType) {
+        public Builder addField(EditText editText, ValidatorFieldRule... fieldType) {
             fieldsForValidation.put(editText, fieldType);
             return this;
         }

@@ -2,9 +2,9 @@ package pl.klamborowski.validatorsample;
 
 import java.util.regex.Pattern;
 
-import pl.klamborowski.validator.ValidatorFieldType;
+import pl.klamborowski.validator.ValidatorFieldRule;
 
-public enum ValidatorFieldTypeImpl implements ValidatorFieldType {
+public enum ValidatorFieldRuleImpl implements ValidatorFieldRule {
     EMPTINESS {
         @Override
         public Pattern getValidationPattern() {

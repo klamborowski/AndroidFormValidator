@@ -2,7 +2,7 @@ package pl.klamborowski.validator;
 
 import java.util.regex.Pattern;
 
-public interface ValidatorFieldType {
+public interface ValidatorFieldRule {
     Pattern getValidationPattern();
 
     int getErrorResId();

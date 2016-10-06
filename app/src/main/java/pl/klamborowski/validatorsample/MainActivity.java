@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupValidator() {
         validator = new Validator.Builder()
-                .addField(inputName, ValidatorFieldTypeImpl.EMPTINESS)
-                .addField(inputName, ValidatorFieldTypeImpl.EMPTINESS)
-                .addField(inputName, ValidatorFieldTypeImpl.EMPTINESS)
+                .addField(inputName, ValidatorFieldRuleImpl.EMPTINESS)
+                .addField(inputEmail, ValidatorFieldRuleImpl.EMPTINESS, ValidatorFieldRuleImpl.EMAIL)
+                .addField(inputPhone, ValidatorFieldRuleImpl.EMPTINESS, ValidatorFieldRuleImpl.PHONE_NUMBER)
                 .build();
     }
 
